@@ -1,7 +1,7 @@
 DEPENDENCIES
-  swap
+  swap_file
     path: .
     metadata: true
 
 GRAPH
-  swap (0.1.0)
+  swap_file (0.1.0)

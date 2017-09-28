@@ -34,4 +34,4 @@ supports 'redhat', '=7.4'
 # end
 
 # The platform support should be added as per any of the options abo
-depends 'swap', '~> 2.1.0'
+
