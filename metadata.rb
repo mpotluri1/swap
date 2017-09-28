@@ -33,5 +33,5 @@ supports 'redhat', '=7.4'
 #   supports _list['name'], _list['version']
 # end
 
-# The platform support should be added as per any of the options above
-depends 'swap', '~> 2.0.0'
+# The platform support should be added as per any of the options abo
+depends 'swap', '~> 2.1.0'
