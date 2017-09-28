@@ -1,0 +1,7 @@
+DEPENDENCIES
+  swap
+    path: .
+    metadata: true
+
+GRAPH
+  swap (0.1.0)

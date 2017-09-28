@@ -1,0 +1,43 @@
+driver:
+  name: ec2
+  region: us-east-1
+  subnet_id: <%= ENV['SB_ID'] %>
+  security_group_ids: ["<%= ENV['SG_ID'] %>"]
+  aws_ssh_key_id: <%= ENV['KEY_NAME'] %>
+  iam_profile_name: <%= ENV['IAM'] %>
+  associate_public_ip: true
+  tags:
+    Owner: <%= ENV['OWNER'] %>
+    Environment: <%= ENV['ENV'] %>
+    Project: <%= ENV['PROJECT'] %>
+    Name: <%= ENV['KNAME'] %>
+    ExpirationDate: "<%= ENV['EXP'] %>"
+
+provisioner:
+  name: chef_solo
+
+transport:
+  ssh_key: <%= ENV['KEY_PATH'] %>
+  connection_timeout: 180
+
+verifier:
+  name: inspec
+
+platforms:
+  # RHEL 7.4
+  - name: RHEL-7.4
+    driver:
+      instance_type: c4.large
+      image_id: ami-185a260e
+      tags:
+        Name: STIG-RHEL-7-RHEL-7.4-swap
+    transport:
+      username: ec2-user
+
+suites:
+  # Default
+  - name: default
+    run_list:
+      - recipe[swap::default]
+    attributes:
+    verifier:
