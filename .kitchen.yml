@@ -30,7 +30,7 @@ platforms:
       instance_type: c4.large
       image_id: ami-185a260e
       tags:
-        Name: STIG-RHEL-7-RHEL-7.4-swap
+        Name: STIG-RHEL-7-RHEL-7.4-swap_file
     transport:
       username: ec2-user
 
@@ -38,6 +38,6 @@ suites:
   # Default
   - name: default
     run_list:
-      - recipe[swap::default]
+      - recipe[swap_file::default]
     attributes:
     verifier:

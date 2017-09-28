@@ -1,4 +1,4 @@
-name 'swap' # ~FC064 ~FC065 ~FC078
+name 'swap_file' # ~FC064 ~FC065 ~FC078
 maintainer 'REAN Cloud LLC'
 maintainer_email 'noel.georgi@reancloud.com'
 license 'All Rights Reserved'
